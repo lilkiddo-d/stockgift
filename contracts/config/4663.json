@@ -1,0 +1,181 @@
+{
+  "chainId": 4663,
+  "name": "Robinhood Chain",
+  "usdg": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+  "usdgFeed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+  "usdgMaxStaleness": 90000,
+  "weth": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+  "swapRouter02": "0xcaf681a66d020601342297493863e78c959e5cb2",
+  "quoterV2": "0x33e885ed0ec9bf04ecfb19341582aadcb4c8a9e7",
+  "uniswapV3Factory": "0x1f7d7550b1b028f7571e69a784071f0205fd2efa",
+  "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+  "multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11",
+  "sequencerUptimeFeed": "0x0000000000000000000000000000000000000000",
+  "stocks": [
+    {
+      "fee": 500,
+      "feed": "0x6B22A786bAa607d76728168703a39Ea9C99f2cD0",
+      "maxStaleness": 345600,
+      "symbol": "AAPL",
+      "token": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+    },
+    {
+      "fee": 3000,
+      "feed": "0x4A1166a659A55625345e9515b32adECea5547C38",
+      "maxStaleness": 345600,
+      "symbol": "TSLA",
+      "token": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d"
+    },
+    {
+      "fee": 500,
+      "feed": "0x379EC4f7C378F34a1B47E4F3cbeBCbAC3E8E9F15",
+      "maxStaleness": 345600,
+      "symbol": "NVDA",
+      "token": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC"
+    },
+    {
+      "fee": 3000,
+      "feed": "0x45C3C877C15E6BA2EBB19eA114Ea508d14C1Af2E",
+      "maxStaleness": 345600,
+      "symbol": "MSFT",
+      "token": "0xe93237C50D904957Cf27E7B1133b510C669c2e74"
+    },
+    {
+      "fee": 3000,
+      "feed": "0xD5a1508ceD74c084eBf3cBe853e2C968fB2a651C",
+      "maxStaleness": 345600,
+      "symbol": "AMZN",
+      "token": "0x12f190a9F9d7D37a250758b26824B97CE941bF54"
+    },
+    {
+      "fee": 500,
+      "feed": "0xF6f373a037c30F0e5010d854385cA89185AE638b",
+      "maxStaleness": 345600,
+      "symbol": "GOOGL",
+      "token": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3"
+    },
+    {
+      "fee": 3000,
+      "feed": "0x7C38C00C30BEe9378381E7B6135d7283356D71b1",
+      "maxStaleness": 345600,
+      "symbol": "META",
+      "token": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35"
+    },
+    {
+      "fee": 500,
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "maxStaleness": 345600,
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+    },
+    {
+      "fee": 500,
+      "feed": "0x80901d846d5D7B030F26B480776EE3b29374C2ae",
+      "maxStaleness": 345600,
+      "symbol": "QQQ",
+      "token": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68"
+    },
+    {
+      "fee": 3000,
+      "feed": "0x943A29E7ae51A4798823ca9eEd2ed533B2A22C72",
+      "maxStaleness": 345600,
+      "symbol": "AMD",
+      "token": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC"
+    },
+    {
+      "fee": 3000,
+      "feed": "0x820ABedFF239034956B7A9d2F0a331f9F075eB4c",
+      "maxStaleness": 345600,
+      "symbol": "PLTR",
+      "token": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A"
+    },
+    {
+      "fee": 500,
+      "feed": "0xB265810950ba6c5C0Ff821c9963014a56fD8Bffb",
+      "maxStaleness": 345600,
+      "symbol": "SPCX",
+      "token": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa"
+    }
+  ],
+  "stockMeta": [
+    {
+      "symbol": "AAPL",
+      "name": "Apple",
+      "pool": "0xaae0d815ee56e4092a5e5c2911e676fea50b2d6d",
+      "poolUsdgLiquidityAtResearch": 263778.489107
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "pool": "0xf4acdaeeb7022862a763c9b1b885e11191c889e3",
+      "poolUsdgLiquidityAtResearch": 275246.232491
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "pool": "0xd4eb21209c4d6093f80b5b84f5c45cc093ea14a3",
+      "poolUsdgLiquidityAtResearch": 1592910.299024
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "pool": "0xeb60bcd1d920ad6e102690ccfc6fb488899e1510",
+      "poolUsdgLiquidityAtResearch": 351630.527299
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "pool": "0x8ac92da74ab5f3b1d024dc1943ad7e15dc4179ef",
+      "poolUsdgLiquidityAtResearch": 427192.453677
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet Class A",
+      "pool": "0x34d0dc122cf9a8eb296fc5e0d3a233625d7d19b7",
+      "poolUsdgLiquidityAtResearch": 575856.573935
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms",
+      "pool": "0x107a7cb40d8665360ba10e59471af06150a50922",
+      "poolUsdgLiquidityAtResearch": 105849.053745
+    },
+    {
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "pool": "0xa7bb1ac63bbab0c44316e6c8c455213441689167",
+      "poolUsdgLiquidityAtResearch": 196747.475454
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ",
+      "pool": "0xd60a5d14db690b7afad71f76b108071d7175597d",
+      "poolUsdgLiquidityAtResearch": 628760.630801
+    },
+    {
+      "symbol": "AMD",
+      "name": "AMD",
+      "pool": "0x48d284a2a4d3dc1b3da08231fe44317e7e7aa51f",
+      "poolUsdgLiquidityAtResearch": 86965.285502
+    },
+    {
+      "symbol": "PLTR",
+      "name": "Palantir Technologies",
+      "pool": "0x851680416a4f4e1c463d45171d61acddbc8554c0",
+      "poolUsdgLiquidityAtResearch": 170058.016173
+    },
+    {
+      "symbol": "SPCX",
+      "name": "Space Exploration Technologies Corp. Class A Common Stock",
+      "pool": "0xc61284332117c3fb23a2a56cceffd07f7af60029",
+      "poolUsdgLiquidityAtResearch": 653834.557677
+    }
+  ],
+  "sources": {
+    "chain": "https://docs.robinhood.com/chain/",
+    "tokens": "https://docs.robinhood.com/chain/contracts + https://api.robinhood.com/rhj/assets (deployments[chainId=4663].contractAddress)",
+    "feeds": "https://docs.chain.link/data-feeds/price-feeds/addresses?network=robinhood (reference-data-directory feeds-robinhood-mainnet.json)",
+    "uniswap": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-robinhood-chain-deployments",
+    "researchedAt": "2026-10-08"
+  }
+}

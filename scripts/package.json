@@ -1,0 +1,22 @@
+{
+  "name": "@stockgift/scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "keeper": "tsx src/keeper.ts",
+    "relayer": "tsx src/relayer.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@stockgift/config": "workspace:*",
+    "ethers": "^6.17.0",
+    "viem": "^2.57.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

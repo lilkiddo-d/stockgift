@@ -1,0 +1,17 @@
+{
+  "name": "stockgift",
+  "private": true,
+  "packageManager": "pnpm@12.9.1",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test:contracts": "cd contracts && forge test",
+    "test:fork": "cd contracts && forge test --match-path \"test/fork/*\"",
+    "coverage": "cd contracts && forge coverage --no-match-coverage \"(test|script)\" --report summary",
+    "slither": "cd contracts && slither .",
+    "dev": "pnpm --filter @stockgift/app dev",
+    "keeper": "pnpm --filter @stockgift/scripts keeper",
+    "relayer": "pnpm --filter @stockgift/scripts relayer",
+    "use-deployment": "node scripts/src/use-deployment.mjs",
+    "abis": "cd contracts && forge build && cd .. && node scripts/src/export-abis.mjs"
+  }
+}

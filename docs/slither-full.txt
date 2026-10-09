@@ -1,0 +1,73 @@
+INFO:Detectors:
+Detector: reentrancy-events
+Reentrancy in ConversionBase._collect(address,address,uint256,uint256) (src/base/ConversionBase.sol#97-106):
+	External calls:
+	- fc.notifyFee(token,fee) (src/base/ConversionBase.sol#104-105)
+	Event emitted after the call(s):
+	- FeeCharged(from,token,fee) (src/base/ConversionBase.sol#105-106)
+Reentrancy in ConversionBase._deliver(address,uint256,address,uint256,uint256,uint16,address) (src/base/ConversionBase.sol#120-151):
+	External calls:
+	- reported = d.swapExactIn(tokenIn,tokenOut,amountIn,minAmountOut,deadline,recipient) (src/base/ConversionBase.sol#143-145)
+	Event emitted after the call(s):
+	- Converted(tokenIn,tokenOut,amountIn,amountOut) (src/base/ConversionBase.sol#150-151)
+Reentrancy in GiftCardNFT.redeem(uint256,IGiftVault.ClaimParams) (src/GiftCardNFT.sol#47-53):
+	External calls:
+	- amountOut = vault.claimDirect(giftId,c) (src/GiftCardNFT.sol#50-51)
+	Event emitted after the call(s):
+	- CardRedeemed(giftId,holder,c.recipient,amountOut) (src/GiftCardNFT.sol#52-53)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-4
+INFO:Detectors:
+Detector: timestamp
+DexAdapter.swapExactIn(address,address,uint256,uint256,uint256,address) (src/DexAdapter.sol#71-97) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp > deadline (src/DexAdapter.sol#79)
+GiftVault._validateCreate(IGiftVault.CreateParams,address) (src/GiftVault.sol#147-168) uses timestamp for comparisons
+	Dangerous comparisons:
+	- p.expiry < block.timestamp + MIN_DURATION || p.expiry > block.timestamp + MAX_DURATION (src/GiftVault.sol#155-158)
+GiftVault._claim(uint256,GiftVault.Gift,IGiftVault.ClaimParams) (src/GiftVault.sol#197-224) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp > g.expiry || block.timestamp > c.deadline (src/GiftVault.sol#202-205)
+GiftVault.refund(uint256) (src/GiftVault.sol#226-232) uses timestamp for comparisons
+	Dangerous comparisons:
+	- g.status != Status.Open || block.timestamp <= g.expiry (src/GiftVault.sol#229-231)
+GroupPot.createPot(address,address,address,bool,uint16,uint64,uint64,string) (src/GroupPot.sol#74-113) uses timestamp for comparisons
+	Dangerous comparisons:
+	- closesAt <= block.timestamp || closesAt > block.timestamp + MAX_OPEN_DURATION (src/GroupPot.sol#92-93)
+GroupPot.contribute(uint256,uint256,string) (src/GroupPot.sol#113-129) uses timestamp for comparisons
+	Dangerous comparisons:
+	- p.status != PotStatus.Open || block.timestamp >= p.closesAt (src/GroupPot.sol#117)
+GroupPot.finalize(uint256) (src/GroupPot.sol#130-158) uses timestamp for comparisons
+	Dangerous comparisons:
+	- msg.sender != p.organizer && block.timestamp < p.closesAt (src/GroupPot.sol#134-135)
+	- giftId != expectedId (src/GroupPot.sol#156-157)
+OracleAdapter.getPrice(address) (src/OracleAdapter.sol#79-94) uses timestamp for comparisons
+	Dangerous comparisons:
+	- updatedAt == 0 || updatedAt > block.timestamp || block.timestamp - updatedAt > cfg.maxStaleness (src/OracleAdapter.sol#89-90)
+OracleAdapter._checkSequencer() (src/OracleAdapter.sol#105-116) uses timestamp for comparisons
+	Dangerous comparisons:
+	- answer != 0 || startedAt == 0 || updatedAt == 0 || answeredInRound < roundId || block.timestamp - startedAt <= sequencerGracePeriod (src/OracleAdapter.sol#114-116)
+ProjectTokenHooks.tierBalance(address) (src/ProjectTokenHooks.sol#67-76) uses timestamp for comparisons
+	Dangerous comparisons:
+	- since != 0 && block.timestamp >= since + minStakeAge (src/ProjectTokenHooks.sol#73)
+ScheduledGifts._validate(ScheduledGifts.CreateScheduleParams) (src/ScheduledGifts.sol#110-125) uses timestamp for comparisons
+	Dangerous comparisons:
+	- p.firstReleaseAt < block.timestamp || p.firstReleaseAt > block.timestamp + MAX_INTERVAL (src/ScheduledGifts.sol#120-121)
+ScheduledGifts._release(uint256,ScheduledGifts.Schedule,address,uint256,uint256) (src/ScheduledGifts.sol#145-167) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp < s.nextReleaseAt (src/ScheduledGifts.sol#150)
+	- block.timestamp > deadline (src/ScheduledGifts.sol#152)
+ScheduledGifts.isDue(uint256) (src/ScheduledGifts.sol#181-185) uses timestamp for comparisons
+	Dangerous comparisons:
+	- s.active && block.timestamp >= s.nextReleaseAt (src/ScheduledGifts.sol#184-185)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+INFO:Detectors:
+Detector: assembly
+GiftCardNFT._escape(bytes,uint256,uint256) (src/GiftCardNFT.sol#165-186) uses assembly
+	- INLINE ASM (src/GiftCardNFT.sol#184-186)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+INFO:Detectors:
+Detector: dead-code
+GiftCardNFT._msgData() (src/GiftCardNFT.sol#226-228) is never used and should be removed
+GiftVault._msgData() (src/GiftVault.sol#280-285) is never used and should be removed
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dead-code
+INFO:Slither:. analyzed (67 contracts with 102 detectors), 19 result(s) found

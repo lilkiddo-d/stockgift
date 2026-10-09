@@ -1,0 +1,32 @@
+name: ci
+on: [push, pull_request]
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: contracts } }
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: foundry-rs/foundry-toolchain@v1
+      - run: forge build
+      - run: forge test
+      - run: forge coverage --no-match-coverage "(test|script)" --report summary
+      - name: fork tests (Robinhood Chain mainnet)
+        run: ROBINHOOD_RPC_URL=https://rpc.mainnet.chain.robinhood.com forge test --match-path "test/fork/*"
+      - uses: crytic/slither-action@v0.4.0
+        with:
+          target: contracts
+          fail-on: medium
+          slither-args: --exclude-low --exclude-informational
+
+  app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @stockgift/scripts typecheck
+      - run: pnpm --filter @stockgift/app build

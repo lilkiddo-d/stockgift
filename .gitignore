@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+contracts/out/
+contracts/cache/
+contracts/broadcast/*/31337/
+contracts/lcov.info
+crytic-export/
+.env
+.env.local
+*.log
+.vercel
+scripts/.keeper-state.json
+.claude/
+app/.env.local

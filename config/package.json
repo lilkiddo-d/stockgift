@@ -1,0 +1,9 @@
+{
+  "name": "@stockgift/config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "chains.ts",
+  "types": "chains.ts",
+  "exports": { ".": "./chains.ts" }
+}

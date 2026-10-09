@@ -1,0 +1,11 @@
+packages:
+  - app
+  - scripts
+  - config
+allowBuilds:
+  esbuild: true
+  keccak: true
+  bufferutil: true
+  utf-8-validate: true
+minimumReleaseAgeExclude:
+  - viem@2.57.4
